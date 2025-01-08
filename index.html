@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Memories</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: pink; /* Updated background color */
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #ff6f61;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .navbar h2 {
+            margin: 0;
+            font-size: 20px;
+        }
+
+        #password-screen {
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        #memory-gallery {
+            display: none;
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .gallery {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            padding: 20px;
+        }
+
+        .gallery img {
+            width: 600px; /* Larger size for slideshow */
+            height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .caption {
+            font-size: 16px;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        input[type="password"] {
+            padding: 10px;
+            margin: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #ff6f61;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #e65a50;
+        }
+
+        /* Slideshow controls */
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 111, 97, 0.6);
+            color: white;
+            border: none;
+            padding: 10px;
+            font-size: 18px;
+            border-radius: 50%;
+        }
+
+        .prev {
+            left: 20px;
+        }
+
+        .next {
+            right: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    <h2>Our Precious Memories</h2>
+</div>
+
+<div id="password-screen">
+    <h1>Welcome to Our Memories</h1>
+    <p>Please enter our anniversary date to view the gallery:</p>
+    <input type="password" id="password" placeholder="DDMMYYYY">
+    <button onclick="checkPassword()">Enter</button>
+</div>
+
+<div id="memory-gallery">
+    <h1>Our Memories</h1>
+    <div class="gallery" id="gallery-container">
+        <!-- Image and caption slides -->
+        <div class="slide">
+            <img src="https://imgur.com/a/wOjJJym" alt="Memory 1">
+            <div class="caption">Our favorite pic</div>
+        </div>
+        <div class="slide">
+            <img src="https://cdn.discordapp.com/attachments/1326361722675527752/1326363008485556284/IMG_5536.jpg" alt="Memory 2">
+            <div class="caption">And our first pic</div>
+        </div>
+        <div class="slide">
+            <img src="https://media.discordapp.net/attachments/1326361722675527752/1326363008846270526/IMG_5556.jpg" alt="Memory 3">
+            <div class="caption">Some kisses in bed xx</div>
+        </div>
+        <div class="slide">
+            <img src="https://media.discordapp.net/attachments/1326361722675527752/1326363009173422090/IMG_5587.jpg" alt="Memory 4">
+            <div class="caption">This I won't comment xd</div>
+        </div>
+        <div class="slide">
+            <img src="https://cdn.discordapp.com/attachments/1326361722675527752/1326363009605566605/IMG_5634.jpg" alt="Memory 5">
+            <div class="caption">One of valentines gift idea...</div>
+        </div>
+        <div class="slide">
+            <img src="https://cdn.discordapp.com/attachments/1326361722675527752/1326363010310209606/IMG_6398.jpg" alt="Memory 6">
+            <div class="caption">Bonded together forever (i wish)</div>
+        </div>
+        <div class="slide">
+            <img src="https://cdn.discordapp.com/attachments/1326361722675527752/1326363010738159647/IMG_6528.jpg" alt="Memory 7">
+            <div class="caption">My cutest and prettiest dwarf xx</div>
+        </div>
+        <div class="slide">
+            <img src="https://cdn.discordapp.com/attachments/1326361722675527752/1326363011077636096/IMG_7560.jpg" alt="Memory 8">
+            <div class="caption">Not pissed at all wrr</div>
+        </div>
+        <div class="slide">
+            <img src="https://cdn.discordapp.com/attachments/1326361722675527752/1326363011413311602/IMG_9722.jpg" alt="Memory 9">
+            <div class="caption">Partners in love and crime</div>
+        </div>
+        <div class="slide">
+            <img src="https://cdn.discordapp.com/attachments/1326361722675527752/1326365568755957823/image0.jpg" alt="Memory 10">
+            <div class="caption">Almost perfect bday - sorry for sleeping so long</div>
+        </div>
+        <div class="slide">
+            <img src="https://cdn.discordapp.com/attachments/1326361722675527752/1326365673328218232/image0.jpg" alt="Memory 11">
+            <div class="caption">What we even doing xd</div>
+        </div>
+        <div class="slide">
+            <img src="https://cdn.discordapp.com/attachments/1326361722675527752/1326365798968852641/image0.jpg" alt="Memory 12">
+            <div class="caption">Your two favorite creatures (u love/ed us)</div>
+        </div>
+    </div>
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+
+<script>
+    const PASSWORD = "06072023"; // Replace with your anniversary date
+
+    let slideIndex = 0;
+
+    function checkPassword() {
+        const input = document.getElementById('password').value;
+        if (input === PASSWORD) {
+            document.getElementById('password-screen').style.display = 'none';
+            document.getElementById('memory-gallery').style.display = 'block';
+            showSlides();
+        } else {
+            alert('Incorrect password. Please try again.');
+        }
+    }
+
+    function showSlides() {
+        const slides = document.getElementsByClassName("slide");
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) { slideIndex = 1 }
+        slides[slideIndex - 1].style.display = "block";
+        setTimeout(showSlides, 3000); // Change image every 3 seconds
+    }
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+</script>
+
+</body>
+</html>
