@@ -53,6 +53,11 @@ header {
 /* Gallery */
 .gallery {
     margin-top: 50px;
+    display: none;
+}
+
+.gallery.visible {
+    display: block;
 }
 
 .gallery h2 {
@@ -96,4 +101,9 @@ header {
     .photo-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+}
+
+/* Hidden Section */
+.hidden {
+    display: none;
 }
