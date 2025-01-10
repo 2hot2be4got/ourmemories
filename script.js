@@ -1,23 +1,36 @@
-// Select the login form and the gallery container
-const loginForm = document.getElementById('login-form');
+// Get elements
+const passwordForm = document.getElementById('login-form');
+const passwordInput = document.getElementById('password');
 const galleryContainer = document.getElementById('gallery-container');
+const galleryMonths = document.querySelectorAll('.gallery-month');
 
-// Password to be checked
+// Password check
 const correctPassword = '06072023';
 
-// Function to handle form submission
-loginForm.addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent the form from submitting the default way
+passwordForm.addEventListener('submit', function(e) {
+    e.preventDefault();
 
-    // Get the password entered by the user
-    const enteredPassword = document.getElementById('password').value.trim();
+    const enteredPassword = passwordInput.value;
 
     if (enteredPassword === correctPassword) {
-        // If the password is correct, show the gallery
-        galleryContainer.classList.remove('hidden');
         galleryContainer.classList.add('visible');
+
+        // Show the first gallery by default
+        showGallery('gallery-oct2022');
+
     } else {
-        // If the password is incorrect, show an alert
-        alert('Incorrect password! Please try again.');
+        alert('Incorrect password. Please try again.');
     }
 });
+
+// Function to show a specific gallery
+function showGallery(monthId) {
+    galleryMonths.forEach(month => {
+        month.classList.remove('visible');
+    });
+
+    const selectedMonth = document.getElementById(monthId);
+    if (selectedMonth) {
+        selectedMonth.classList.add('visible');
+    }
+}
