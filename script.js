@@ -3,6 +3,7 @@ const passwordForm = document.getElementById('login-form');
 const passwordInput = document.getElementById('password');
 const galleryContainer = document.getElementById('gallery-container');
 const galleryMonths = document.querySelectorAll('.gallery-month');
+const loginContainer = document.getElementById('login-container');
 
 // Password check
 const correctPassword = '06072023';
@@ -13,11 +14,13 @@ passwordForm.addEventListener('submit', function(e) {
     const enteredPassword = passwordInput.value;
 
     if (enteredPassword === correctPassword) {
+        // Hide login after successful login
+        loginContainer.style.display = 'none';
+        
         galleryContainer.classList.add('visible');
 
         // Show the first gallery by default
         showGallery('gallery-oct2022');
-
     } else {
         alert('Incorrect password. Please try again.');
     }
