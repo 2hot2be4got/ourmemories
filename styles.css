@@ -60,7 +60,8 @@ header {
 /* Gallery */
 .gallery {
     margin-top: 50px;
-    display: none;
+    display: block;
+    padding: 20px;
 }
 
 /* Gallery visible */
