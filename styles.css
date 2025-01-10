@@ -1,0 +1,99 @@
+/* Reset default margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Base styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8e9e9;
+    color: #333;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    background-color: #ffccf1;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 2px solid #e0b1b1;
+}
+
+/* Login Section */
+.login-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.login-form {
+    background-color: #fff0f5;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.login-form label {
+    font-weight: bold;
+    color: #555;
+}
+
+.login-form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Gallery */
+.gallery {
+    margin-top: 50px;
+}
+
+.gallery h2 {
+    text-align: center;
+    color: #b14e85;
+    margin-bottom: 20px;
+}
+
+.gallery-month {
+    margin-bottom: 40px;
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.photo-item {
+    background-color: #fff5f7;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.photo-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.photo-item p {
+    color: #555;
+    font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .photo-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
