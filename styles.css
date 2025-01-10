@@ -75,15 +75,6 @@ header {
     margin-bottom: 20px;
 }
 
-.gallery-month {
-    display: none;
-}
-
-.gallery-month.visible {
-    display: block;
-    animation: fadeInMonth 1s ease-in;
-}
-
 /* Photo grid */
 .photo-grid {
     display: grid;
