@@ -11,6 +11,7 @@ body {
     background-color: #f8e9e9;
     color: #333;
     padding: 20px;
+    overflow-y: auto; /* Allow vertical scrolling */
 }
 
 /* Header */
