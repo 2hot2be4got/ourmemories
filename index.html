@@ -4,211 +4,80 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Memories</title>
-    <style>
-     body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f8f0f5;
-    color: #333;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    overflow-x: hidden;
-    background-image: url('https://images.unsplash.com/photo-1561346211-74f2e3ff6073?ixlib=rb-4.0.3&auto=format&fit=crop&w=1450&q=80'); /* Bright floral background */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-/* Navbar Style */
-.navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: #ff6f61;
-    color: white;
-    padding: 10px 0;
-    text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-}
-
-.navbar h2 {
-    margin: 0;
-    font-size: 24px; /* Increased font size */
-}
-
-/* Password Screen Styles */
-#password-screen {
-    text-align: center;
-    animation: fadeIn 1s ease-in-out;
-}
-
-h1 {
-    font-size: 32px; /* Increase header size */
-    margin-bottom: 10px;
-}
-
-p {
-    font-size: 18px; /* Larger paragraph text */
-    margin-bottom: 20px;
-}
-
-/* Input Field Styles */
-input[type="password"] {
-    padding: 15px;
-    margin: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 18px; /* Larger input field text */
-}
-
-/* Button Styles */
-button {
-    padding: 12px 24px;
-    border: none;
-    border-radius: 5px;
-    background-color: #ff6f61;
-    color: white;
-    font-size: 18px; /* Increase button font size */
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: #e65a50;
-}
-
-/* Gallery Section Styles */
-#memory-gallery {
-    display: none;
-    text-align: center;
-    animation: fadeIn 1s ease-in-out;
-}
-
-.gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    padding: 20px;
-}
-
-.gallery img {
-    width: 180px;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.gallery img:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
-}
-
-.caption {
-    font-size: 14px;
-    margin-top: 5px;
-    text-align: center;
-}
-
-/* Animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<div class="navbar">
-    <h2>Our Precious Memories</h2>
-</div>
+    <!-- Header -->
+    <header>
+        <h1>Welcome to Our Memories</h1>
+        <p>Enter your password (anniversary: 06072023)</p>
+    </header>
 
-<div id="password-screen">
-    <h1 style="font-size: 36px; color: #5a3d3d; font-family: 'Comic Sans MS', cursive;">Welcome to Our Memories</h1>
-    <p style="font-size: 20px; color: #555;">Please enter our anniversary date to view the gallery:</p>
-    <input type="password" id="password" placeholder="DDMMYYYY">
-    <button onclick="checkPassword()">Enter</button>
-</div>
+    <!-- Login Section -->
+    <div class="login-container">
+        <form action="#" method="POST" class="login-form">
+            <label for="username">Username (optional):</label>
+            <input type="text" id="username" name="username">
 
-<div id="memory-gallery">
-    <h1>Our Memories</h1>
-    <div class="gallery" id="gallery-container">
-        <!-- Add images here -->
-        <div>
-            <img src="https://cdn.discordapp.com/attachments/1326361722675527752/1326361941400359034/IMG_9914.png" alt="Memory 1">
-            <div class="caption">Our favorite pic</div>
-        </div>
-        <div>
-            <img src="https://cdn.discordapp.com/attachments/1326361722675527752/1326363008485556284/IMG_5536.jpg" alt="Memory 2">
-            <div class="caption">And our first pic</div>
-        </div>
-        <div>
-            <img src="https://media.discordapp.net/attachments/1326361722675527752/1326363008846270526/IMG_5556.jpg" alt="Memory 3">
-            <div class="caption">Some kisses in bed xx</div>
-        </div>
-        <div>
-            <img src="https://media.discordapp.net/attachments/1326361722675527752/1326363009173422090/IMG_5587.jpg" alt="Memory 4">
-            <div class="caption">This I won't comment xd</div>
-        </div>
-        <div>
-            <img src="https://cdn.discordapp.com/attachments/1326361722675527752/1326363009605566605/IMG_5634.jpg" alt="Memory 5">
-            <div class="caption">One of valentines gift idea...</div>
-        </div>
-        <div>
-            <img src="https://cdn.discordapp.com/attachments/1326361722675527752/1326363010310209606/IMG_6398.jpg" alt="Memory 6">
-            <div class="caption">Bonded together forever (i wish)</div>
-        </div>
-        <div>
-            <img src="https://cdn.discordapp.com/attachments/1326361722675527752/1326363010738159647/IMG_6528.jpg" alt="Memory 7">
-            <div class="caption">My cutest and prettiest dwarf xx</div>
-        </div>
-        <div>
-            <img src="https://cdn.discordapp.com/attachments/1326361722675527752/1326363011077636096/IMG_7560.jpg" alt="Memory 8">
-            <div class="caption">Not pissed at all wrr</div>
-        </div>
-        <div>
-            <img src="https://cdn.discordapp.com/attachments/1326361722675527752/1326363011413311602/IMG_9722.jpg" alt="Memory 9">
-            <div class="caption"> <s>Partners</s>in love and crime</div>
-        </div>
-        <div>
-            <img src="https://cdn.discordapp.com/attachments/1326361722675527752/1326365568755957823/image0.jpg" alt="Memory 10">
-            <div class="caption">Almost perfect bday - sorry for sleeping so long</div>
-        </div>
-        <div>
-            <img src="https://cdn.discordapp.com/attachments/1326361722675527752/1326365673328218232/image0.jpg" alt="Memory 11">
-            <div class="caption">What we even doing xd</div>
-        </div>
-        <div>
-            <img src="https://cdn.discordapp.com/attachments/1326361722675527752/1326365798968852641/image0.jpg" alt="Memory 12">
-            <div class="caption">Your two favorite creatures (u love/ed us)</div>
-        </div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="06072023">
+
+            <button type="submit">Login</button>
+        </form>
     </div>
-</div>
 
-<script>
-    const PASSWORD = "06072023"; // Replace with your anniversary date
+    <!-- Gallery Section -->
+    <section class="gallery">
+        <h2>Photo Gallery</h2>
 
-    function checkPassword() {
-        const input = document.getElementById('password').value;
-        if (input === PASSWORD) {
-            document.getElementById('password-screen').style.display = 'none';
-            document.getElementById('memory-gallery').style.display = 'block';
-        } else {
-            alert('Incorrect password. Please try again.');
-        }
-    }
-</script>
+        <!-- Gallery 1: Oct 2022 - Jan 2023 -->
+        <div class="gallery-month">
+            <h3>October 2022 - January 2023</h3>
+            <div class="photo-grid">
+                <div class="photo-item">
+                    <img src="images/photo1_oct2022.jpg" alt="Photo October 2022">
+                    <p>Caption for October 2022 - Photo 1</p>
+                </div>
+                <div class="photo-item">
+                    <img src="images/photo2_nov2022.jpg" alt="Photo November 2022">
+                    <p>Caption for November 2022 - Photo 2</p>
+                </div>
+                <div class="photo-item">
+                    <img src="images/photo3_dec2022.jpg" alt="Photo December 2022">
+                    <p>Caption for December 2022 - Photo 3</p>
+                </div>
+                <div class="photo-item">
+                    <img src="images/photo4_jan2023.jpg" alt="Photo January 2023">
+                    <p>Caption for January 2023 - Photo 4</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Gallery 2: May 2023 - Jan 2025 -->
+        <div class="gallery-month">
+            <h3>May 2023 - January 2025</h3>
+            <div class="photo-grid">
+                <div class="photo-item">
+                    <img src="images/photo5_may2023.jpg" alt="Photo May 2023">
+                    <p>Caption for May 2023 - Photo 1</p>
+                </div>
+                <div class="photo-item">
+                    <img src="images/photo6_jun2023.jpg" alt="Photo June 2023">
+                    <p>Caption for June 2023 - Photo 2</p>
+                </div>
+                <div class="photo-item">
+                    <img src="images/photo7_jul2023.jpg" alt="Photo July 2023">
+                    <p>Caption for July 2023 - Photo 3</p>
+                </div>
+                <div class="photo-item">
+                    <img src="images/photo8_aug2023.jpg" alt="Photo August 2023">
+                    <p>Caption for August 2023 - Photo 4</p>
+                </div>
+            </div>
+        </div>
+
+    </section>
 
 </body>
 </html>
